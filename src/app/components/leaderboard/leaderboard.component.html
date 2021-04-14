@@ -1,0 +1,66 @@
+<div class="container">
+  
+  <div class="title_container">Star for Current Sprint</div>
+  
+  <div class="table_container">
+    <table>
+      <tr *ngFor="let award of awardData">
+        <th>{{award.user_id}}</th>
+        <th>{{award.category}}</th> 
+      </tr>
+    </table>
+  </div>
+  <div class="empty_data" *ngIf="(data | json) == '{}'"> empty :( </div>
+  
+  <div class="title_container">Leaderboard</div>
+  
+  <div class="table_container">
+
+    <table>
+      <tr *ngFor="let item of data | keyvalue">
+        <th>{{item.key}}</th>
+        <th><b class="month" *ngFor="let item of [].constructor(item.value); let i = index">&#10032;</b></th> 
+      </tr>
+    </table>
+  </div>
+  <div class="empty_data" *ngIf="(data | json) == '{}'"> empty :( </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <div class="child"><p>leaderboard works!</p></div>
+</div>
+Stars awarded this sprint:
+
+<table style="width:100%">
+  <tr *ngFor="let award of awardData">
+    <th>{{award.user_id}}</th>
+    <th>{{award.category}}</th> 
+  </tr>
+</table>
+
+Leaderboard:
+
+
+<div class="empty_data" *ngIf="(data | json) == '{}'"> empty :( </div>
+
+
+
+<table style="width:100%">
+  <tr *ngFor="let item of data | keyvalue">
+    <th>{{item.key}}</th>
+    <!-- <th>{{item.value}}</th> -->
+    <!-- <th><b class="month" *ngFor="let item of [].constructor(item.value); let i = index">&#10032;</b></th> 
+     -->
+    <!-- <th><div*ngFor="let item of [].constructor( 4 )">&#10032;</div></th> -->
+  <!-- </tr>
+</table> --> 
+
+<!-- <div*ngFor="let item of [].constructor( 4 )">&#10032;</div> -->
+<!-- <b class="month" *ngFor="let item of [].constructor(10); let i = index">&#10032;</b> -->

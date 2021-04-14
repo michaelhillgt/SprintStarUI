@@ -1,0 +1,25 @@
+<div class="container">
+  
+    <form (submit)="selectTeam($event)" class="team_form">
+      <label id = "select_label">Scrum Team:</label>
+      
+      <div id = select_container>
+        <select name="team_selection" id="team_selection">
+          <option *ngFor="let team of this.teams" 
+              [value]="team" 
+              [attr.selected]="team">
+            {{team}}
+          </option>
+        </select>
+      </div>
+      
+      <div id = button_container>
+      <input type="submit" value="Select" id="submit_button">
+      </div>
+        
+    </form>
+  
+  
+</div>
+
+

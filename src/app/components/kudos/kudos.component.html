@@ -1,0 +1,16 @@
+<div class="container">
+  
+  <div class="title_container">Kudos</div>
+  
+  <div class="table_container">
+    <table>
+      <tr *ngFor="let item of data | keyvalue">
+        <th>{{item.key}}</th>
+        <th>{{item.value}}</th> 
+      </tr>
+    </table>
+  </div>
+  <div class="empty_data" *ngIf="(data | json) == '{}'"> empty :( </div>
+
+</div>
+
